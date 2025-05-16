@@ -1,17 +1,54 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="./src/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event Planner</title>
-  </head>
-  <body>
-    <div id="app">
-      <div id="header">Event planner</div>
-      <div></div>
-    </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./src/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./src/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./src/css/BasePage.css" />
+
+
+
+
+
+</head>
+
+<body class="flex-column">
+
+    <section class="base-page plannerSection d-flex flex-column m-0">
+        <!-- Main section for event planning. -->
+        <div class="blockWrapper position-relative">
+            <p class="plannerTitle d-flex align-items-center position-absolute text-black">Event planner</p>
+        </div>
+        <div class="createEventCol d-flex flex-column">
+            <p class="createEventText d-flex align-items-center justify-content-center text-center text-black">Create your event:</p>
+            <div class="eventGridWrapper d-flex flex-column ms-auto">
+                <!-- Grid layout for event places. -->
+                <div class="eventPlaceCard d-flex flex-column">
+                    <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black">Event Place:</p>
+                    <img class="eventPlaceImage ms-auto" src="./src/BasePage/5d6637c4d4c7d6f2dbafb83f5f325f99.png" alt="alt text" />
+                </div>
+                <div class="eventPlaceCard d-flex flex-column">
+                    <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black">Event Price:</p>
+                    <img class="eventPlaceImage ms-auto" src="./src/BasePage/5d6637c4d4c7d6f2dbafb83f5f325f99.png" alt="alt text" />
+                </div>
+                <div class="eventPlaceCard1 d-flex flex-column">
+                    <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black">Event Place:</p>
+                    <img class="eventPlaceImage ms-auto" src="./src/BasePage/5d6637c4d4c7d6f2dbafb83f5f325f99.png" alt="alt text" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
 </html>
