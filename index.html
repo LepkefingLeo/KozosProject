@@ -20,8 +20,13 @@
 
   <section class="base-page plannerSection d-flex flex-column m-0">
 
-    <div class="blockWrapper position-relative">
-      <p class="plannerTitle d-flex align-items-center position-absolute text-black">Event planner</p>
+    <div class="blockWrapper d-flex justify-content-between align-items-center" style="height: 165px;">
+        <p class="plannerTitle text-black m-0">Event planner</p>
+        <div><button class="plannerTitle text-black dropbtn" onclick="myFunction()">Dropdown<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="./index.html">Booking Page</a>
+            <a href="./listingpage.html">Listed Booking</a>
+        </div></div>
     </div>
 
     <div class="createEventCol d-flex flex-column">
@@ -54,6 +59,20 @@
   </section>
 
   <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+    }
+
     const dropdown = document.getElementById('nameDropdown');
     const priceInput = document.getElementById('priceInput');
     const satisfactionInput = document.getElementById('satisfactionInput');
