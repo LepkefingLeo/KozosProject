@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="./src/css/common.css" />
     <link rel="stylesheet" type="text/css" href="./src/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./src/css/BasePage.css" />
+    <link rel="stylesheet" type="text/css" href="./src/style.css" />
 
 
 
@@ -41,21 +42,21 @@
                     
                 <div class="eventPlaceCard d-flex flex-column">
                     <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black" style="margin-right: 80px;">Event Price:</p>
-                    <img id="priceImage" class="eventPlaceImage ms-auto" src="./src/BasePage/5d6637c4d4c7d6f2dbafb83f5f325f99.png" alt="alt text" />
-                    <div>
-                        <output id="priceImage">
+                    <!-- <img id="priceImage" class="eventPlaceImage ms-auto" src="./src/BasePage/5d6637c4d4c7d6f2dbafb83f5f325f99.png" alt="alt text" /> -->
+                    <div class="output">
+                        <p class="outputPrice" id="outputPrice">
 
-                        </output>
+                        </p>
                     </div>
                 </div>
 
                 <div class="eventPlaceCard1 d-flex flex-column">
                     <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black" style="margin-left: 60px;">Place Satisfaction:</p>
-                    <img  class="eventPlaceImage ms-auto" src="./src/BasePage/5d6637c4d4c7d6f2dbafb83f5f325f99.png" alt="alt text" />
-                    <div>
-                        <output id="rateImage">
-
-                        </output>
+                    <!-- <img  class="eventPlaceImage ms-auto" src="./src/BasePage/5d6637c4d4c7d6f2dbafb83f5f325f99.png" alt="alt text" /> -->
+                    <div class="output">
+                        <p class="outputSatisfaction" id="outputSatisfaction">
+                            
+                        </p>
                     </div>
 
                 </div>
@@ -101,10 +102,14 @@
   
             console.log("Pay:", payValue);
             console.log("Rate:", rateValue);
+            const pay = document.getElementsById("outputPrice");
+            pay.innerHTML = `Pay: ${payValue}`
           } else {
             
             payValue = '';
             rateValue = '';
+            const pay = document.getElementsById("outputPrice");
+            pay.innerHTML = `Pay: `
           }
         });
       </script>

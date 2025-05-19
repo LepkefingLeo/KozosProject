@@ -8,3 +8,16 @@ body{
   margin: 0;
   background-color: #D9ECB2;
 }
+.output{
+  border-radius: 25px;
+  background-color: #cccccc;
+  margin-left: 22%;
+  width: 400px;
+  height: 25px;
+}
+.outputSatisfaction{
+  margin-left: 10px;
+}
+.outputPrice{
+  margin-left: 10px;
+}
