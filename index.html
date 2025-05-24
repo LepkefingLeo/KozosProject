@@ -205,18 +205,45 @@
     if (bookingButton) {
       bookingButton.addEventListener("click", () => {
         const selectedPlace = dropdown.options[dropdown.selectedIndex].text;
+        const placeId = dropdown.value; 
         const price = priceInput.value;
         const satisfaction = satisfactionInput.value;
         const booker = document.getElementById("placeholderNameInput").value;
         const dateFrom = document.getElementById("datefrom").value;
         const dateTo = document.getElementById("dateto").value;
         const purpose = document.getElementById("purpose").value;
-
+            
         if (!selectedPlace || !booker || !dateFrom || !dateTo || !purpose || selectedPlace === "Select an event place") {
           alert("Please fill in all fields!");
           return;
         }
-
+      
+        const now = new Date();
+        const fromDate = new Date(dateFrom);
+        const toDate = new Date(dateTo);
+      
+        if (fromDate < now.setHours(0, 0, 0, 0)) {
+          alert("You cannot book a date in the past.");
+          return;
+        }
+      
+        if (fromDate > toDate) {
+          alert("End date must be after start date.");
+          return;
+        }
+      
+        const existingBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+      
+        const conflict = existingBookings.some(booking => {
+          return booking.selectedPlace === selectedPlace &&
+            !(new Date(booking.dateTo) < fromDate || new Date(booking.dateFrom) > toDate);
+        });
+      
+        if (conflict) {
+          alert("This event place is already booked during the selected dates.");
+          return;
+        }
+      
         const booking = {
           selectedPlace,
           price,
@@ -226,8 +253,7 @@
           dateTo,
           purpose
         };
-
-        const existingBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+      
         existingBookings.push(booking);
         localStorage.setItem("bookings", JSON.stringify(existingBookings));
         alert("Booking saved!");
