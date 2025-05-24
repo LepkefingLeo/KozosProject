@@ -1,85 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" type="text/css"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="./src/css/common.css" />
-  <link rel="stylesheet" type="text/css" href="./src/css/fonts.css" />
-  <link rel="stylesheet" type="text/css" href="./src/css/BasePage.css" />
-  <link rel="stylesheet" type="text/css" href="./src/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Event Planner</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .plannerSection {
+      padding: 2rem;
+    }
+
+    .plannerTitle {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .dropbtn {
+      background-color: #ffffff;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .form-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-card label {
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .form-card input,
+    .form-card select {
+      margin-bottom: 15px;
+    }
+
+    .booking-btn {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .booking-btn:hover {
+      background-color: #084298;
+    }
+  </style>
 </head>
 
-<body class="flex-column">
+<body>
 
-  <section class="base-page plannerSection d-flex flex-column m-0">
-
-    <div class="blockWrapper d-flex justify-content-between align-items-center" style="height: 165px;">
-        <p class="plannerTitle text-black m-0">Event planner</p>
-        <div><button class="plannerTitle text-black dropbtn" onclick="myFunction()">Dropdown<i class="fa fa-caret-down"></i></button>
+  <section class="plannerSection container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="plannerTitle m-0">Event Planner</h1>
+      <div class="position-relative">
+        <button class="dropbtn" onclick="myFunction()">Dropdown <i class="fa fa-caret-down"></i></button>
         <div class="dropdown-content" id="myDropdown">
-            <a href="./index.html">Booking Page</a>
-            <a href="./listingpage.html">Listed Booking</a>
-        </div></div>
-    </div>
-    <p class="createEventText d-flex align-items-center justify-content-start text-center text-black">Create your event:</p>
-    <div class="createEventWrapper d-flex">
-      <div class="createEventCol d-flex flex-column">
-      <div class="eventGridWrapper d-flex flex-column ms-auto">
-
-        <div class="eventPlaceCard d-flex flex-column">
-          <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black"
-            style="margin-right: 80px;">Event Place:</p>
-          <select id="nameDropdown" name="cars" style=" margin-left: 5px; width: 496px; height: 38px;">
-            <option value="">Loading...</option>
-          </select>
-        </div>
-
-        <div class="eventPlaceCard d-flex flex-column mt-3">
-          <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black"
-            style="margin-right: 80px;">Event Price:</p>
-          <input type="text" id="priceInput" class="form-control" placeholder="Price will appear here" readonly />
-        </div>
-
-        <div class="eventPlaceCard1 d-flex flex-column mt-3">
-          <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black"
-            style="margin-left: 60px;">Place Satisfaction:</p>
-          <input type="text" id="satisfactionInput" class="form-control" placeholder="Satisfaction will appear here" readonly />
+          <a href="./index.html">Booking Page</a>
+          <a href="./listingpage.html">Listed Booking</a>
         </div>
       </div>
     </div>
-    <div class="createEventCol d-flex flex-column" style="margin-left: 25%;">
-      <div class="eventPlaceCard1 d-flex flex-column mt-3">
-          <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black"
-            style="margin-right: 50px;">Eventbooker:</p>
-          <input type="text" id="placeholderNameInput" />
-        </div>
 
-        <div class="eventPlaceCard1 d-flex flex-column mt-3">
-          <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black"
-            style="margin-right: 50px;">Booking Time:</p>
-          <p><b>from:</b></p>
-          <input type="date" id="datefrom" />
-          <p><b>to:</b></p>
-          <input type="date" id="dateto">
+    <h4 class="mb-4">Create your event:</h4>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="form-card">
+          <label for="nameDropdown">Event Place</label>
+          <select id="nameDropdown" class="form-select">
+            <option value="">Loading...</option>
+          </select>
+
+          <label for="priceInput">Event Price</label>
+          <input type="text" id="priceInput" class="form-control" placeholder="Price will appear here" readonly />
+
+          <label for="satisfactionInput">Place Satisfaction</label>
+          <input type="text" id="satisfactionInput" class="form-control" placeholder="Satisfaction will appear here"
+            readonly />
         </div>
-        <div class="eventPlaceCard1 d-flex flex-column mt-3">
-          <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black"
-            style="margin-right: 50px;">Booking Purpose:</p>
-          <input type="text" id="purpose" />
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-card">
+          <label for="placeholderNameInput">Eventbooker</label>
+          <input type="text" id="placeholderNameInput" class="form-control" placeholder="Your full name"/>
+
+          <label>Booking Time</label>
+          <div class="d-flex flex-column">
+            <small class="mb-1"><b>From:</b></small>
+            <input type="date" id="datefrom" class="form-control" />
+            <small class="mt-3 mb-1"><b>To:</b></small>
+            <input type="date" id="dateto" class="form-control" />
+          </div>
+
+          <label for="purpose" class="mt-3">Booking Purpose</label>
+          <input type="text" id="purpose" class="form-control" placeholder="Write something here"/>
+
+          <div class="mt-4 text-end">
+            <button id="bookingButton" class="btn btn-primary" style="font-size: 20px;">Booking</button>
+
+          </div>
         </div>
-        <div class="eventPlaceCard1 d-flex flex-column mt-3">
-          <p class="eventPlaceText d-flex align-items-center justify-content-center text-center text-black"
-            style="margin-right: 50px;">Confirmation:</p>
-          <button style="border: solid; background-color: lightgray; font-size: 20px;">Booking</button>
-        </div>
-    </div>
+      </div>
     </div>
   </section>
 
@@ -88,10 +156,9 @@
       document.getElementById("myDropdown").classList.toggle("show");
     }
 
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(e) {
+    window.onclick = function (e) {
       if (!e.target.matches('.dropbtn')) {
-      var myDropdown = document.getElementById("myDropdown");
+        var myDropdown = document.getElementById("myDropdown");
         if (myDropdown.classList.contains('show')) {
           myDropdown.classList.remove('show');
         }
@@ -109,7 +176,6 @@
       .then(data => {
         eventData = data;
         dropdown.innerHTML = '<option value="">Select an event place</option>';
-
         data.forEach(item => {
           const option = document.createElement('option');
           option.value = item.id;
@@ -121,11 +187,10 @@
         console.error('Error fetching data:', error);
         dropdown.innerHTML = '<option>Error loading data</option>';
       });
-    
+
     dropdown.addEventListener('change', () => {
       const selectedId = parseInt(dropdown.value);
       const selectedItem = eventData.find(item => item.id === selectedId);
-
       if (selectedItem) {
         priceInput.value = `${selectedItem.pay}$ / day` || '';
         satisfactionInput.value = selectedItem.rate || '';
@@ -133,7 +198,41 @@
         priceInput.value = '';
         satisfactionInput.value = '';
       }
+
     });
+
+    const bookingButton = document.getElementById("bookingButton");
+    if (bookingButton) {
+      bookingButton.addEventListener("click", () => {
+        const selectedPlace = dropdown.options[dropdown.selectedIndex].text;
+        const price = priceInput.value;
+        const satisfaction = satisfactionInput.value;
+        const booker = document.getElementById("placeholderNameInput").value;
+        const dateFrom = document.getElementById("datefrom").value;
+        const dateTo = document.getElementById("dateto").value;
+        const purpose = document.getElementById("purpose").value;
+
+        if (!selectedPlace || !booker || !dateFrom || !dateTo || !purpose || selectedPlace === "Select an event place") {
+          alert("Please fill in all fields!");
+          return;
+        }
+
+        const booking = {
+          selectedPlace,
+          price,
+          satisfaction,
+          booker,
+          dateFrom,
+          dateTo,
+          purpose
+        };
+
+        const existingBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+        existingBookings.push(booking);
+        localStorage.setItem("bookings", JSON.stringify(existingBookings));
+        alert("Booking saved!");
+      });
+    }
   </script>
 </body>
 
