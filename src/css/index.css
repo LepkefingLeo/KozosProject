@@ -1,13 +1,13 @@
 body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8f9fa;
+      background-color: #87d14f;
     }
 
     .plannerSection {
       padding: 2rem;
     }
 
-    .plannerTitle {
+    .plannerTitle { 
       font-size: 2rem;
       font-weight: 600;
     }
@@ -41,7 +41,7 @@ body {
     }
 
     .dropdown-content a:hover {
-      background-color: #f1f1f1;
+      background-color: #9fd972;
     }
 
     .show {
@@ -66,7 +66,7 @@ body {
     }
 
     .booking-btn {
-      background-color: #0d6efd;
+      background-color: #9fd972;
       color: white;
       border: none;
       border-radius: 8px;
@@ -76,5 +76,14 @@ body {
     }
 
     .booking-btn:hover {
-      background-color: #084298;
+      background-color: #87d14f;
+    }
+    #bookingButton{
+      background-color: #87d14f;
+    }
+    #optDropdown{
+      background-color: #ffffff;
+    }
+    #optDropdown:hover{
+      background-color: #9fd972;
     }
